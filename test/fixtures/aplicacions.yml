@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  couchinn: MyString
+  descripcion: MyText
+
+two:
+  couchinn: MyString
+  descripcion: MyText
