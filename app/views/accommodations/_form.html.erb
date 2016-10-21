@@ -1,0 +1,48 @@
+<%= form_for(@accommodation) do |f| %>
+  <% if @accommodation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@accommodation.errors.count, "error") %> prohibited this accommodation from being saved:</h2>
+
+      <ul>
+      <% @accommodation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar %><br>
+    <%= f.text_field :lugar %>
+  </div>
+  <div class="field">
+    <%= f.label :informacion %><br>
+    <%= f.text_field :informacion %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_field :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :foto %><br>
+    <%= f.text_field :foto %>
+  </div>
+
+<div class="field">
+    <%= f.label "tipo de hospedaje" %><br>
+    <%= f.select :accommodation_type_id,     options_for_select(AccommodationType.all.map { |a| [a.descripcion, a.id]}, f.object.accommodation_type_id), class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+
+<% end %>
+
+

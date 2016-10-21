@@ -1,9 +1,44 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Descripcion:</strong>
-  <%= @accommodation_type.descripcion %>
+  <strong>Titulo:</strong>
+  <%= @accommodation_type.Titulo %>
 </p>
 
-<%= link_to 'Edit', edit_accommodation_type_path(@accommodation_type) %> |
-<%= link_to 'Back', accommodation_types_path %>
+<p>
+<strong>Descripcion:</strong>
+<%= @accommodation.Descripcion %>
+</p>
+
+<p>
+<strong>Tipo de hospedaje:</strong>
+<% if @accommodation.accommodation_type_id.nil? %>
+<%= @accommodation.accommodation_type_id %>
+<% else %>
+<%= accommodationType.find(@accommodation.accommodation_type_id).Descripcion %>
+<% <%end%>
+</p>
+	
+	<p>
+	<strong>Imagen:</strong>
+<%= @accommodation.Imagen %>
+</p>
+<p>
+<strong>Email del propietario:</strong>
+<%= @accommodation.user.Email %>
+</p>
+
+
+
+
+
+<%= link_to 'volver', accommodation_types_path, class: "btn btn-warning" %> 
+
+
+
+
+
+
+
+
+

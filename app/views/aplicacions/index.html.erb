@@ -16,9 +16,9 @@
       <tr>
         <td><%= aplicacion.couchinn %></td>
         <td><%= aplicacion.descripcion %></td>
-        <td><%= link_to 'Show', aplicacion %></td>
-        <td><%= link_to 'Edit', edit_aplicacion_path(aplicacion) %></td>
-        <td><%= link_to 'Destroy', aplicacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', aplicacion %></td>
+        <td><%= link_to 'Editar', edit_aplicacion_path(aplicacion) %></td>
+        <td><%= link_to 'Eliminar', aplicacion, method: :delete, data: { confirm: 'Esta seguro que desea eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>

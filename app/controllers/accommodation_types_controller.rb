@@ -10,7 +10,12 @@ class AccommodationTypesController < ApplicationController
   # GET /accommodation_types/1
   # GET /accommodation_types/1.json
   def show
-  end
+    @h = AccommodationType.find(params.require(:id))
+  
+      redirect_to :back
+    
+        end
+  
 
   # GET /accommodation_types/new
   def new
@@ -28,7 +33,7 @@ class AccommodationTypesController < ApplicationController
 
     respond_to do |format|
       if @accommodation_type.save
-        format.html { redirect_to @accommodation_type, notice: 'Accommodation type was successfully created.' }
+        format.html { redirect_to @accommodation_type, notice: 'Se ha creado un nuevo tipo de hospedaje' }
         format.json { render :show, status: :created, location: @accommodation_type }
       else
         format.html { render :new }
@@ -42,7 +47,7 @@ class AccommodationTypesController < ApplicationController
   def update
     respond_to do |format|
       if @accommodation_type.update(accommodation_type_params)
-        format.html { redirect_to @accommodation_type, notice: 'Accommodation type was successfully updated.' }
+        format.html { redirect_to @accommodation_type, notice: ' Se ha modificado correctamente' }
         format.json { render :show, status: :ok, location: @accommodation_type }
       else
         format.html { render :edit }
@@ -56,7 +61,7 @@ class AccommodationTypesController < ApplicationController
   def destroy
     @accommodation_type.destroy
     respond_to do |format|
-      format.html { redirect_to accommodation_types_url, notice: 'Accommodation type was successfully destroyed.' }
+      format.html { redirect_to accommodation_types_url, notice: 'Se ha eliminado un tipo de hospedaje' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +74,6 @@ class AccommodationTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accommodation_type_params
-      params.require(:accommodation_type).permit(:descripcion)
+      params.require(:accommodation_type).permit(:descripcion,:estado)
     end
 end

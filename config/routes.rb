@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
+  resources :accommodations
+  get 'home/index'
+
   devise_for :users
   resources :accommodation_types
   resources :aplicacions
 
 
-  root 'accommodation_types#index'
+
+ 
+
+
+  root 'accommodations#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -60,3 +67,4 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+

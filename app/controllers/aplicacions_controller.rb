@@ -42,7 +42,7 @@ class AplicacionsController < ApplicationController
   def update
     respond_to do |format|
       if @aplicacion.update(aplicacion_params)
-        format.html { redirect_to @aplicacion, notice: 'Aplicacion was successfully updated.' }
+        format.html { redirect_to @aplicacion, notice: 'Accommodation type was successfully updated.' }
         format.json { render :show, status: :ok, location: @aplicacion }
       else
         format.html { render :edit }
@@ -54,9 +54,10 @@ class AplicacionsController < ApplicationController
   # DELETE /aplicacions/1
   # DELETE /aplicacions/1.json
   def destroy
-    @aplicacion.destroy
+    @aplicacion.destroy 
     respond_to do |format|
-      format.html { redirect_to aplicacions_url, notice: 'Aplicacion was successfully destroyed.' }
+      
+      format.html { redirect_to aplicacions_url, notice: 'Accommodation type was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
